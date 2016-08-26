@@ -23,7 +23,7 @@ app.use(middleware.logger);
 // ROUTES
 // route level middleware below
 app.get('/about', middleware.requireAuthentication, function (req, res) {
-	res.send('About us');
+	res.send('About us!');
 });
 // END OF ROUTES
 
