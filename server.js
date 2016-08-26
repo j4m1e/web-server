@@ -2,18 +2,7 @@ var express = require('express');
 var app = express();
 // uppercase defines this as a constant i.e. should not be changed
 var PORT = 3000; 
-
-var middleware = {
-	requireAuthentication: function (req, res, next) {
-		console.log ('Private route hit!');
-		next();
-	},
-	logger: function (req, res, next) {
-		// new Date().toString() - date & time
-		console.log ('Request: ' + new Date().toString() + ' ' + req.method + ' ' + req.originalUrl);
-		next();
-	}
-};
+var middleware = require('./middleware.js');
 
 // Middleware must be at the top of the code or else it will not run
 // This is application level middleware
